@@ -28,6 +28,7 @@ $1/.gems/bin/jekyll --kramdown | indent
 
 # Generate CSS
 echo "Generating CSS" | indent
+mkdir $1/assets/css
 for f in $1/assets/scss/*.scss; do
   b=${f##*/}
   $1/.gems/bin/sass $f $1/assets/css/${b%.*}.css | indent
