@@ -15,7 +15,6 @@ gempath:
 EOF
 
 /usr/local/bin/gem install jekyll kramdown coderay --no-rdoc --no-ri | indent
-/usr/local/bin/gem install sass --no-rdoc --no-ri | indent
 
 # Run Jekyll
 echo "Running Jekyll" | indent
@@ -23,6 +22,9 @@ export GEM_HOME=$1/.gems
 export PATH=$1/.gems/bin:$PATH
 cd $1
 $1/.gems/bin/jekyll --kramdown | indent
+
+#Install SASS
+/usr/local/bin/gem install sass --no-rdoc --no-ri | indent
 
 # Generate CSS
 echo "Generating CSS" | indent
